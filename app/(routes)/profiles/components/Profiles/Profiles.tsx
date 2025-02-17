@@ -25,7 +25,7 @@ import { ProfilesProps } from "./Profiles.types";
 import { AddProfile } from "./AddProfile";
 import { useRouter } from "next/navigation";
 import { useCurrentNetflixUser } from "@/hooks/use-current-user";
-import { UserNetflix } from "@prisma/client";
+import { userNetflix } from "@prisma/client";
 
 export function Profiles(props: ProfilesProps) {
   const { users } = props;
@@ -34,7 +34,7 @@ export function Profiles(props: ProfilesProps) {
   const [manageProfiles, setManageProfiles] = useState(false);
   const router = useRouter();
 
-  const onClickUser = (user: UserNetflix) => {
+  const onClickUser = (user: userNetflix) => {
     changeCurrentUser(user);
     router.push("/");
   };

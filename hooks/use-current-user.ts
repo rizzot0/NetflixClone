@@ -1,18 +1,18 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-import { UserNetflix } from "@prisma/client";
+import { userNetflix } from "@prisma/client";
 
 interface UseCurrentUser {
-  currentUser: UserNetflix | null;
-  changeCurrentUser: (data: UserNetflix) => void;
+  currentUser: userNetflix | null;
+  changeCurrentUser: (data: userNetflix) => void;
 }
 
 export const useCurrentNetflixUser = create(
   persist<UseCurrentUser>(
     (set) => ({
       currentUser: null,
-      changeCurrentUser: (data: UserNetflix) => {
+      changeCurrentUser: (data: userNetflix) => {
         set({ currentUser: data });
       },
     }),

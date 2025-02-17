@@ -15,14 +15,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { SelectorProfileProps } from "./SelectorProfile.types";
-import { UserNetflix } from "@prisma/client";
+import { userNetflix } from "@prisma/client";
 
 export function SelectorProfile(props: SelectorProfileProps) {
   const { users } = props;
   const router = useRouter();
   const { changeCurrentUser, currentUser } = useCurrentNetflixUser();
 
-  const onChangeUser = (userNetflix: UserNetflix) => {
+  const onChangeUser = (userNetflix: userNetflix) => {
     changeCurrentUser(userNetflix);
     router.refresh();
   };
