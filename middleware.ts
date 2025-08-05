@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Rutas públicas que no requieren autenticación
-  const publicRoutes = ["/login", "/register"];
+  const publicRoutes = ["/login", "/register", "/landing"];
   const isPublicRoute = publicRoutes.includes(pathname);
 
   // Si está en una ruta pública, permitir acceso

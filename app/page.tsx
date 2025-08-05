@@ -14,7 +14,7 @@ export default async function Home() {
   const session = await auth();
 
   if (!session || !session.user || !session.user.id) {
-    return redirect("/login");
+    return redirect("/landing");
   }
 
   const usersNetflix = await db.userNetflix.findMany({
